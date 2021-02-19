@@ -11,6 +11,11 @@
 
 <p>姓名：<input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
 
+<div id="result">	
+	<p><a href="gethint.php" target="results">显示结果</a></p>
+	<iframe id="txt" name="results"></iframe>	
+</div>
+
 <script>
 function showHint(str) {
 	var xhttp;
