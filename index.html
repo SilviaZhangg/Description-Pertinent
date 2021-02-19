@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-</head>
+<meta charset="UTF-8">
 <body>
 
-<h1>Descriptions for cities</h1>
-<p>Enter a city please:</p>
-<input type="text" name="searchingcity" value="Paris">
-<button type="button">Click Me!</button>
-<br><br>
+<h1>XMLHttpRequest 对象</h1>
 
-<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
-<input type="range" id="a" value="50">100
-+<input type="number" id="b" value="50">
-=<output name="x" for="a b"></output>
-</form>
+<h2>请在下面的输入字段中键入字母 A-Z：</h2>
 
+<p>搜索建议：<span id="txtHint"></span></p> 
+
+<p>姓名：<input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+
+<script>
+function showHint(str) {
+	var xhttp;
+	if (str.length == 0) { 
+		document.getElementById("txtHint").innerHTML = "";
+		return;
+	}
+	xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("txtHint").innerHTML = this.responseText;
+		}
+	};
+	xhttp.open("GET", "gethint.php?q="+str, true);
+	xhttp.send();   
+}
+</script>
 
 </body>
 </html>
