@@ -1,38 +1,148 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
+
+<head>
+<style>
+header {
+	background-color:black;
+	color:white;
+	text-align:center;
+	padding:5px;	 
+}
+nav {
+	line-height:30px;
+	background-color:#eeeeee;
+	height:1600px;
+	width:100px;
+	float:left;
+	padding:5px;	      
+}
+section {
+	width:1000px;
+	float:left;
+	padding:10px;	 	 
+}
+footer {
+	background-color:black;
+	color:white;
+	clear:both;
+	text-align:center;
+	padding:5px;	 	 
+}
+</style>
+</head>
+
 <body>
 
-<h1>XMLHttpRequest 对象</h1>
+<header>
+<h1>City Gallery</h1>
+</header>
 
-<h2>请在下面的输入字段中键入字母 A-Z：</h2>
+<nav>
+Nagqu<br>
+Chengdu<br>
+Paris<br>
+Lille<br>
+Kunming<br>
+Shanghai<br>
+</nav>
 
-<p>搜索建议：<span id="txtHint"></span></p> 
+<section>
+<h1>Nagqu</h1>
+<p>
+City in Tibet, People's Republic of China. Nagqu is the city who has the 4th largest area among the world
+</p>
+Seni District is contained in place Nagqu with complexity 0.0
+</p>
+Sog County is contained in place Nagqu with complexity 1.0
+</p>
+Baqen County is contained in place Nagqu with complexity 1.58
+</p>
+Tanggula Mountains is contained in place Nagqu with complexity 2.0
+</p>
+Amdo County is contained in place Nagqu with complexity 2.32
+</p>
 
-<p>姓名：<input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+<h1>Chengdu</h1>
+<p>
+the capital of Sichuan Province, China.  Chengdu is the city who has the 21th largest population among the world.
+</p>
+Xihua University's location is Chengdu
+</p>
+Chengdu Normal University, CDNU's location is Chengdu
+</p>
+Sichuan University is contained in Chengdu
+</p>
+Dujiangyan City's location is Chengdu
+</p>
+Southwest Minzu University's location is Chengdu
+</p>
 
-<div id="result">	
-	<p><a href="gethint.php" target="results">显示结果</a></p>
-	<iframe id="txt" name="results"></iframe>	
-</div>
+<h1>Paris</h1>
+<p>
+capital and largest city of France. Paris is the city who has the 260th largest population among the world.
+</p>
+Paris Descartes University - Sorbonne Paris City is contained in Paris.
+</p>
+Paris is in Ile-de-France
+</p>
+Paris has award of Companion of the Liberation
+</p>
+"I Am not an Easy Man"'s content location is Paris
+</p>
+Hotel de Monaco is contained in Paris 
+</p>
+Stade Francais is in Paris 
+</p>
+Sorbonne University is in Paris
+</p>
 
-<script>
-function showHint(str) {
-	var xhttp;
-	if (str.length == 0) { 
-		document.getElementById("txtHint").innerHTML = "";
-		return;
-	}
-	xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById("txtHint").innerHTML = this.responseText;
-		}
-	};
-	xhttp.open("GET", "https://raw.githubusercontent.com/SilviaZhangg/Description-Pertinent/main/gethint.php?q="+str, true);
-	xhttp.send();   
-}
-</script>
+<h1>Lille</h1>
+<p>
+Commune in Nord, France. Lille is the city who has the 1664th largest population among the world.
+</p>
+Lille has award of Croix de guerre 1939 to 1945
+</p>
+Lomme is contained in Lille
+</p>
+Ecole Nationale Superieure d'Arts et Metiers (Lille) is contained in Lille
+</p>
+
+
+<h1>Kunming</h1>
+<p>
+Capital of Yunnan province, China. Kunming is the city who has the 107th largest area among the world.
+</p>
+Yunnan Minzu University's location is Kunming
+</p>
+Tomb of Nie Er is contained in Kunming
+</p>
+Yunnan University is in Kunming
+</p>
+
+<h1>Shanghai</h1>
+<p>
+Municipality of China. Shanghai is the city who has the 2th largest population among the world.
+</p>
+Chile Pavilion_EXPO is contained in Shanghai.
+</p>
+Shanghai University of Sport is contained in Shanghai.
+</p>
+Antai College of Economics and Management is contained in Shanghai.
+</p>
+Ruijin Hospital is in Shanghai
+</p>
+Sorbonne University is in Paris
+</p>
+
+</section>
+
+
+<footer>
+If you want to know more cities, please use this instruction:
+<p><a href="https://github.com/SilviaZhangg/Description-Pertinent/blob/main/PRIM_demo.ipynb" target="results">Click on me for a demonstration</a></p>
+<p><a href="https://github.com/SilviaZhangg/Description-Pertinent/blob/main/PRIM_demo.ipynb" target="results">Click on me for source code</a></p>
+</footer>
 
 </body>
 </html>
